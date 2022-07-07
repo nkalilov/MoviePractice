@@ -21,7 +21,7 @@ public class Main {
         cast1.add(new Cast("Мартин Фримен","Джон Ватсон"));
 
         List<Movie>movies=new ArrayList<>();
-        movies.add(new Movie("Гарри Поттер",2011,"фильм",director,cast));
+        movies.add(new Movie("Titanik",2011,"фильм",director,cast));
         movies.add(new Movie("Шерлок Холмс",2010,"телесериал",director1,cast1));
 
         findAble.findMovieByName(movies);
