@@ -11,6 +11,7 @@ public class SortClass implements SortAble {
         MovieYearComparator yearComparator = new MovieYearComparator();
         movies.sort(yearComparator);
         for (Movie movie : movies) {
+            System.out.println();
             System.out.println("Год: " + movie.getYear());
             System.out.println("Фильм: " + movie.getName());
             System.out.println("Описание: " + movie.getDescription());
