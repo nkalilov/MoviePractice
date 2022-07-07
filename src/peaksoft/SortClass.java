@@ -1,5 +1,6 @@
 package peaksoft;
 
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -44,8 +45,7 @@ public class SortClass implements SortAble {
 
     @Override
     public void sortByDirector(List<Movie> movies) {
-        MovieDirectorComparator movieDirectorComparator = new MovieDirectorComparator();
-        movies.sort(movieDirectorComparator);
+        movies.sort(comparator);
         for (Movie movie : movies) {
             System.out.println("Директор: " + movie.getDirector().getName() + " " + movie.getDirector().getLastName());
             System.out.println("Фильм: " + movie.getName());
@@ -59,4 +59,11 @@ public class SortClass implements SortAble {
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
     }
+
+    public Comparator<Movie> comparator = new Comparator<Movie>() {
+        @Override
+        public int compare(Movie o1, Movie o2) {
+            return o1.getYear()-o2.getYear();
+        }
+    };
 }
